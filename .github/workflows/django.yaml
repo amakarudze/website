@@ -62,7 +62,7 @@ jobs:
             DATABASE_NAME: blog
       - name: Run Tests
         run: |
-          coverage run -m pytest
+          pytest --cov --cov-report=xml
         env:
             DJANGO_SETTINGS_MODULE: website.settings
             DATABASE_HOST: localhost
