@@ -42,9 +42,11 @@ jobs:
         coverage run -m pytest
         coverage xml
       env:
-        DB_NAME: blog
-        DB_HOST: localhost
-        DB_PASSWORD: postgres
-        DB_USER: postgres
+        DJANGO_SETTINGS_MODULE: website.settings
+        DATABASE_HOST: localhost
+        DATABASE_PORT: 5432
+        DATABASE_USER: postgres
+        DATABASE_PASSWORD: postgres
+        DATABASE_NAME: blog
     - name: Upload Coverage to Codecov
       uses: codecov/codecov-action@v2
